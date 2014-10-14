@@ -49,6 +49,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/acdb/MTP_Headset_cal.acdb:system/etc/acdbdata/MTP/MTP_Headset_cal.acdb \
     $(LOCAL_PATH)/audio/acdb/MTP_Speaker_cal.acdb:system/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 
+# DIRAC HD
+PRODUCT_COPY_FILES += \
+    device/oppo/msm8974-common/libdirac/libdirac.so:system/lib/soundfx/libdirac.so
+
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
