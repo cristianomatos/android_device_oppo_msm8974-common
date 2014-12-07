@@ -45,6 +45,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/acdb/MTP_Headset_cal.acdb:system/etc/acdbdata/MTP/MTP_Headset_cal.acdb \
     $(LOCAL_PATH)/audio/acdb/MTP_Speaker_cal.acdb:system/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 
+# libdirac
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/libdirac/libdirac.so:system/lib/soundfx/libdirac.so
+
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
@@ -223,6 +227,10 @@ endif
 # Enable Bluetooth HFP service
 PRODUCT_PROPERTY_OVERRIDES +=
     bluetooth.hfp.client=1
+
+# DiracHD audio effects
+PRODUCT_PROPERTY_OVERRIDES += \
+    dsp.dirac.enable=true
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
