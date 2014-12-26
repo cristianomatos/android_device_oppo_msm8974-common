@@ -71,7 +71,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.gapless.enabled=true \
     tunnel.audio.encode=true \
     media.aac_51_output_enabled=true \
-    audio.offload.pcm.enable=true
+    audio.offload.pcm.16bit.enable=true \
+    audio.offload.pcm.24bit.enable=true
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -180,6 +181,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_PACKAGES += \
+    dhcpcd.conf \
     libwpa_client \
     hostapd \
     wpa_supplicant \
