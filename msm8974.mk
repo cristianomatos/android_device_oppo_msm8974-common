@@ -52,7 +52,6 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8974 \
     audio.r_submix.default \
     audio.usb.default \
-    libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -84,11 +83,6 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     e2fsck \
     setup_fs
-
-PRODUCT_PACKAGES += \
-    libxml2
-#    libbson \
-#    libcurl \
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -157,11 +151,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     power.msm8974
 
-# QRNGD
-PRODUCT_PACKAGES += \
-    qrngd \
-    qrngp
-
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8974
@@ -202,7 +191,8 @@ PRODUCT_PACKAGES += \
     curl \
     libnl_2 \
     libbson \
-    libcnefeatureconfig
+    libcnefeatureconfig \
+    libxml2
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -243,6 +233,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.perf.cores_online=2 \
     ro.vendor.extension_library=libqti-perfd-client.so \
     ro.telephony.call_ring.multiple=0
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qti.sensors.ir_proximity=true
 
 # Permissions
 PRODUCT_COPY_FILES += \
