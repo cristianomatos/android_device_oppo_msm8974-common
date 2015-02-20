@@ -18,8 +18,6 @@ ifneq ($(QCPATH),)
 $(call inherit-product-if-exists, $(QCPATH)/common/config/device-vendor.mk)
 endif
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
 # overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -202,6 +200,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
+# Enable USB OTG interface
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.isUsbOtgEnabled=true
+
 # proprietary wifi display, if available
 ifneq ($(QCPATH),)
 PRODUCT_BOOT_JARS += WfdCommon
@@ -234,6 +236,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qti.sensors.ir_proximity=true
+
+# HACK for QC errata issue
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.render_dirty_regions=false
 
 # Permissions
 PRODUCT_COPY_FILES += \
